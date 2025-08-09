@@ -1,8 +1,14 @@
-﻿@page "/"
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Sample</PageTitle>
+
+<div class="page">
+    @page "/orders"
+@using Radzen
 @using Radzen.Blazor
 
-<RadzenDataGrid @ref="ordersGrid" AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" AllowPaging="true" PageSize="5" AllowSorting="true"
-                Data="@orders" TItem="Order">
+<RadzenDataGrid @ref="ordersGrid" AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" AllowPaging="true" PageSize="5" AllowSorting="true" 
+            Data="@orders" TItem="Order">
     <Columns>
         <RadzenDataGridColumn Width="50px" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
             <Template Context="data">
@@ -29,11 +35,13 @@
         <RadzenDataGridColumn Property="@nameof(Order.ShipCountry)" Title="ShipCountry" />
         <RadzenDataGridColumn Width="160px" Property="OrderID" Title="Order Details">
             <Template Context="data">
-                <RadzenButton ButtonStyle="ButtonStyle.Info" Variant="Variant.Flat" Shade="Shade.Lighter" Icon="info" class="rz-m-1" Click=@(() => OpenOrder(data.OrderID)) Text="@data.OrderID.ToString()" />
             </Template>
         </RadzenDataGridColumn>
     </Columns>
 </RadzenDataGrid>
+
+
+</div>
 
 @code {
     RadzenDataGrid<Order> ordersGrid;
