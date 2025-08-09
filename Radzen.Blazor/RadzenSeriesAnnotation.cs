@@ -100,17 +100,11 @@ namespace Radzen.Blazor
                 case Radzen.CoordinateSystem.Polar:
                     double orgX;
                     double orgY;
-                    if (series is RadzenPieSeries<TItem>)
-                    {
-                        var pieSeries = series as RadzenPieSeries<TItem>;
-                        orgX = pieSeries.CenterX;
-                        orgY = pieSeries.CenterY;
-                    }
-                    else
-                    {
+                 
+                    
                         orgX = x;
                         orgY = y;
-                    }
+                    
 
                     x -= orgX;
                     y -= orgY;

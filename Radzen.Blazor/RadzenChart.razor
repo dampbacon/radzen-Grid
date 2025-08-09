@@ -31,13 +31,7 @@
                 }
             </g>
         </svg>
-        @foreach (var series in Series.OrderBy(s => s.RenderingOrder))
-        {
-            @if (series.Visible && series is IChartDonutSeries donut)
-            {
-                @donut.RenderTitle(MarginLeft, MarginTop)
-            }
-        }
+
 
     </CascadingValue>
 }

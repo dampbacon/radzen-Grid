@@ -126,15 +126,7 @@ namespace Radzen.Blazor
         /// <returns></returns>
         protected bool ShouldRenderAxes()
         {
-            var pieType = typeof(RadzenPieSeries<>);
-            var donutType = typeof(RadzenDonutSeries<>);
-
-            return !Series.All(series =>
-            {
-                var type = series.GetType().GetGenericTypeDefinition();
-
-                return type == pieType || type == donutType;
-            });
+            return false;
         }
 
         internal bool ShouldInvertAxes()
