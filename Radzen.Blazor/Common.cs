@@ -541,65 +541,7 @@ namespace Radzen
         void Refresh();
     }
 
-    /// <summary>
-    /// Supplies information about RadzenDropZoneContainer CanDrop function and RadzenDropZone Drop event.
-    /// </summary>
-    public class RadzenDropZoneItemEventArgs<TItem>
-    {
-        /// <summary>
-        /// Gets the dragged item zone.
-        /// </summary>
-        public RadzenDropZone<TItem> FromZone { get; internal set; }
-
-        /// <summary>
-        /// Gets the drop zone.
-        /// </summary>
-        public RadzenDropZone<TItem> ToZone { get; internal set; }
-
-        /// <summary>
-        /// Gets the dragged item.
-        /// </summary>
-        public TItem Item { get; internal set; }
-
-        /// <summary>
-        /// Gets the dropped item.
-        /// </summary>
-        public TItem ToItem { get; internal set; }
-
-        /// <summary>
-        /// The data that underlies a drag-and-drop operation, known as the drag data store.
-        /// See <see cref="DataTransfer"/>.
-        /// </summary>
-        public DataTransfer DataTransfer { get; set; } = default!;
-    }
-
-    /// <summary>
-    /// Supplies information about RadzenDropZoneContainer ItemRender event.
-    /// </summary>
-    public class RadzenDropZoneItemRenderEventArgs<TItem>
-    {
-        /// <summary>
-        /// Gets the drop zone.
-        /// </summary>
-        public RadzenDropZone<TItem> Zone { get; internal set; }
-
-        /// <summary>
-        /// Gets the dragged item.
-        /// </summary>
-        public TItem Item { get; internal set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this item is visible.
-        /// </summary>
-        /// <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
-        public bool Visible { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets the row HTML attributes.
-        /// </summary>
-        public IDictionary<string, object> Attributes { get; private set; } = new Dictionary<string, object>();
-    }
-
+  
     /// <summary>
     /// Supplies information about RadzenDropDown ItemRender event.
     /// </summary>
@@ -2908,23 +2850,6 @@ namespace Radzen
     /// <summary>
     /// Supplies information about a <see cref="RadzenHtmlEditor.Execute" /> event that is being raised.
     /// </summary>
-    public class HtmlEditorExecuteEventArgs
-    {
-        /// <summary>
-        /// Gets the RadzenHtmlEditor instance which raised the event.
-        /// </summary>
-        public RadzenHtmlEditor Editor { get; set; }
-
-        internal HtmlEditorExecuteEventArgs(RadzenHtmlEditor editor)
-        {
-            Editor = editor;
-        }
-
-        /// <summary>
-        /// Gets the name of the command which RadzenHtmlEditor is executing.
-        /// </summary>
-        public string CommandName { get; set; }
-    }
 
     /// <summary>
     /// Supplies information about a <see cref="RadzenTree.Change" /> event that is being raised.
